@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benie Tea</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4E1C1; /* Light coffee background */
+            color: #3E2A47; /* Dark brown text */
+        }
+
+        header {
+            background-color: #4B2C20; /* Dark coffee color */
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        header .title {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            color: #F4E1C1; /* Creamy color for the title */
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px;
+            background-color: #5D3F2E; /* Slightly lighter brown */
+            border-radius: 20px;
+        }
+
+        nav a {
+            color: #F4E1C1; /* Light text for links */
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #7A4A3E; /* Hover effect with a darker coffee color */
+            color: white;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Grid layout for images */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjusts columns */
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%; /* Ensure it takes the full width */
+        }
+
+        .image-gallery img {
+            width: 70%;
+            height: 70%;
+            object-fit: cover; /* Ensures the images cover the grid cell */
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        footer {
+            background-color: #4B2C20; /* Dark coffee color for footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Optional: Add a coffee cup icon to the header */
+        header::before {
+            content: url('coffee-cup-icon.png');
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="Menu.html">Menu</a>
+        <a href="checkout.html">Check Out</a>
+    </nav>
+</header>
+
+<div class="content" id="home">
+    <h2>Welcome to Benie Tea</h2>
+    <p>Explore our delicious drinks and cozy atmosphere.</p>
+
+    <!-- Image gallery section -->
+    <div class="image-gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWA4yujqAN1KFEgDYGYgfO-vhOIq3LdUkTBA&s/coffee1.jpg" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeiJUG0GPl5dVXBI-h3VKBDqfefTrJaLa0cw&s/coffee2.jpg" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVscTn5HnQi03o23RuQjFfbl5GdNX57MgMhg&s/coffee3.jpg" >
+        <img src="https://sakiproducts.com/cdn/shop/articles/20230202120418-dibek-coffee-recipe-blog_1200x1200.webp?v=1694506959/coffee4.jpg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWKQgOJcqrc52PWG68WBVPk4VK0W6K9qCM5A&s/coffee5.jpg" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMzyeeI96yDmT-iUjum2Bna_9OU0Cr_A4gBw&s/coffee6.jpg" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR8Q_RrELDLpBSuhHF9CEAWgSBo9mRQtSy-g&s/coffee6.jpg">
+        <img src="https://img.freepik.com/premium-photo/hot-coffee-latte-cappuccino-cup-with-beautiful-rosetta-latte-art-milk-foam-rustic-wood-table-ba_926199-166585.jpg">
+       
+       
+     
+     
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Benie Tea - All Rights Reserved</p>
+</footer>
+<script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+  
+    const widget = await Chatbox.initBubble({
+      agentId: 'cm4czudsw00ir62aeqnoos3dq',
+      
+      // optional 
+      // If provided will create a contact for the user and link it to the conversation
+      contact: {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'customer@email.com',
+        phoneNumber: '+33612345644',
+        userId: '42424242',
+      },
+      // optional
+      // Override initial messages
+      initialMessages: [
+        'Hello Georges how are you doing today?',
+        'How can I help you ?',
+      ],
+      // optional
+      // Provided context will be appended to the Agent system prompt
+      context: "The user you are talking to is John. Start by Greeting him by his name.",
+    });
+  
+    // open the chat bubble
+    widget.open();
+  
+    // close the chat bubble
+    widget.close()
+  
+    // or 
+    widget.toggle()
+  </script>
+
+</body>
+</html>
