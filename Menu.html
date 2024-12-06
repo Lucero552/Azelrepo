@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Box</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #C4A484; /* Soft brown background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-wrap: wrap;
+            gap: 20px; /* Add some space between menu items */
+            padding: 20px;
+        }
+
+        .menu-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-container img {
+            width: 100%;
+            max-width: 250px;
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures images fit nicely */
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .menu-container h2 {
+            margin-top: 15px;
+            color: #4B2C20; /* Dark brown text */
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu-container a {
+            text-decoration: none;
+            color: #4B2C20; /* Dark brown color for the link */
+            transition: color 0.3s ease;
+        }
+
+        .menu-container a:hover {
+            color: #F4A300; /* Highlight color for hover effect */
+        }
+
+        .menu-container:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        .menu-container:hover img {
+            transform: scale(1.1); /* Slight zoom on image */
+            filter: brightness(0.85); /* Dim the image slightly */
+        }
+
+        .menu-container:hover h2 {
+            color: #F4A300; /* Change title color on hover */
+        }
+
+        /* Ensure responsiveness */
+        @media (max-width: 768px) {
+            .menu-container {
+                width: 100%;
+                max-width: 300px; /* Full width on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h2><a href="checkout.html">Caramel Macchiato</a></h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcF9u7BFsZ5yfwav1S44mM4Vpq5lPIzo28OQ&s" alt="Caramel Macchiato">
+    </div>
+
+    <div class="menu-container">
+        <h2><a href="checkout.html">Vanilla Latte</a></h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXQigakVzOdxqfoOQsuvQ6PCm3icW--IOYg&s" alt="Vanilla Latte">
+    </div>
+
+    <div class="menu-container">
+        <h2><a href="checkout.html">Mochaccino</a></h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_SqPLtl7UcZF_pU-aqX_KF5kuKaYDmzMGg&s" alt="Mochaccino">
+    </div>
+
+    <div class="menu-container">
+        <h2><a href="checkout.html">Americano</a></h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXQigakVzOdxqfoOQsuvQ6PCm3icW--IOYg&s" alt="Americano">
+    </div>
+    <script type="module">
+        import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+      
+        const widget = await Chatbox.initBubble({
+          agentId: 'cm4czudsw00ir62aeqnoos3dq',
+          
+          // optional 
+          // If provided will create a contact for the user and link it to the conversation
+          contact: {
+            firstName: 'John',
+            lastName: 'Doe',
+            email: 'customer@email.com',
+            phoneNumber: '+33612345644',
+            userId: '42424242',
+          },
+          // optional
+          // Override initial messages
+          initialMessages: [
+            'Hello Georges how are you doing today?',
+            'How can I help you ?',
+          ],
+          // optional
+          // Provided context will be appended to the Agent system prompt
+          context: "The user you are talking to is John. Start by Greeting him by his name.",
+        });
+      
+        // open the chat bubble
+        widget.open();
+      
+        // close the chat bubble
+        widget.close()
+      
+        // or 
+        widget.toggle()
+      </script>
+</body>
+</html>
